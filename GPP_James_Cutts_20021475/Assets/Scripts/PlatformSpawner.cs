@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlatformSpawner : MonoBehaviour
 {
+    public GameObject parentObject;
+
     public GameObject startPlatform;
     public Vector3 endPosition;
     public float platformDelay = 1f;
@@ -26,7 +28,7 @@ public class PlatformSpawner : MonoBehaviour
 
         GameObject newPlatform = Instantiate(startPlatform, spawnPosition, Quaternion.identity) as GameObject;
         currentPlatform = newPlatform;
-
+        newPlatform.transform.SetParent(parentObject.transform);
         spawnPosition = spawnPoint.position; // always spawn at the spawn point
 
         StartCoroutine("MovePlatform", currentPlatform);
