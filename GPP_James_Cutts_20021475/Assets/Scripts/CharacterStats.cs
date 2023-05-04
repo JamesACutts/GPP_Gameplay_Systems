@@ -10,6 +10,7 @@ public class CharacterStats : MonoBehaviour
     protected int health;
     [SerializeField]
     protected bool isDead;
+
     public float attackSpeed;
 
     private void Start()

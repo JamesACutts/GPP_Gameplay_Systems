@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     public DoorButton button;
     public Lever lever;
 
-
     // Input system
     PlayerInput controls;
 
@@ -96,7 +95,7 @@ public class PlayerController : MonoBehaviour
         controls.Gameplay.Movement.canceled += ctx => move = Vector2.zero;
         controls.Gameplay.Run.performed += ctx => runPressed = ctx.ReadValueAsButton();
         controls.Gameplay.Jump.performed += ctx => jumpPressed = ctx.ReadValueAsButton();
-/*      controls.Gameplay.Attack.performed += ctx => Attack();*/
+        /*      controls.Gameplay.Attack.performed += ctx => Attack();*/
 
         controls.Gameplay.Interact.performed += ctx => Interact();
     }
@@ -162,7 +161,7 @@ public class PlayerController : MonoBehaviour
             float targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-/*          movement = cam1.transform.forward * movement.z + cam1.transform.right * movement.x;*/
+            /*          movement = cam1.transform.forward * movement.z + cam1.transform.right * movement.x;*/
             controller.Move(movement * moveSpeed * Time.deltaTime);
         }
 
@@ -194,14 +193,13 @@ public class PlayerController : MonoBehaviour
                 // Jump
                 Jump();
             }
-            if(attacking && !runPressed && canAttack)
+            if (attacking && !runPressed && canAttack)
             {
                 if (!isAttacking)
                 {
                     isAttacking = true;
                 }
             }
-
         }
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -267,4 +265,5 @@ public class PlayerController : MonoBehaviour
             isLeverUsed = true;
         }
     }
+
 }

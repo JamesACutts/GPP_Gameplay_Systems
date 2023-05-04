@@ -64,5 +64,4 @@ public class DoorButton : MonoBehaviour
         controller.OnEnable();
         buttonText.gameObject.SetActive(true);
     }
-
 }
