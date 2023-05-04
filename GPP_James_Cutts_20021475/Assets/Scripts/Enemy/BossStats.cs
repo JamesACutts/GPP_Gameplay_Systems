@@ -2,17 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossStats : MonoBehaviour
+public class BossStats : CharacterStats
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private int damage;
+
+    private void Start()
     {
-        
+        InitVariables();
+    }
+    public void DealDamage(CharacterStats statsToDamage)
+    {
+        statsToDamage.TakeDamage(damage);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Die()
     {
-        
+        base.Die();
+        Destroy(gameObject);
     }
+    public override void InitVariables()
+    {
+        maxHealth = 50;
+        SetHealthTo(maxHealth);
+        isDead = false;
+
+        damage = 5;
+        attackSpeed = 1f;
+    }
+
 }
+
