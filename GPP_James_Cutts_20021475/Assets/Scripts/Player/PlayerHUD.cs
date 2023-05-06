@@ -17,5 +17,4 @@ public class PlayerHUD : MonoBehaviour
          maxHealthText.text = maxHealth.ToString();*/
         healthBar.SetValues(currentHealth, maxHealth);
     }
-
 }

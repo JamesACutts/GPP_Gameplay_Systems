@@ -36,7 +36,7 @@ public class CharacterStats : MonoBehaviour
         isDead = true;
     }
 
-    public void SetHealthTo(int healthToSetTo)
+    public virtual void SetHealthTo(int healthToSetTo)
     {
         health = healthToSetTo;
         CheckHealth();

@@ -3534,7 +3534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54bb6487a24caf46924fffd0c855beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevel: Outdoor
+  firstLevel: Game
   optionScreen: {fileID: 379865619}
   controlScreen: {fileID: 1254033294}
   firstMenuButton: {fileID: 1628941357}

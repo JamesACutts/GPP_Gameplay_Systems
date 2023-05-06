@@ -26,7 +26,6 @@ public class EnemyStats : CharacterStats
     {
         base.Die();
         Split();
-        
     }
     void Split()
     {
@@ -63,12 +62,10 @@ public class EnemyStats : CharacterStats
     }
     public override void InitVariables()
     {
-        maxHealth = 30;
         SetHealthTo(maxHealth);
         isDead = false;
-
         damage = 2;
-        attackSpeed = 1f;
+        attackSpeed = 1.2f;
     }
 
 }

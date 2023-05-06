@@ -15,7 +15,6 @@ public class BossStats : CharacterStats
     {
         statsToDamage.TakeDamage(damage);
     }
-
     public override void Die()
     {
         base.Die();
